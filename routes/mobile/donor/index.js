@@ -1,8 +1,8 @@
 const passport = require("passport");
 const secureRoute = require("./secured-routes");
 const donorRoutes = require("./donor");
-const isTokenBlacklisted = require("../../middlewares/isTokenBlackListed");
-const verifyToken = require("../../middlewares/verifyToken");
+const isTokenBlacklisted = require("../../../middlewares/isTokenBlackListed");
+const verifyToken = require("../../../middlewares/verifyToken");
 require("../donor/auth");
 
 const router = require("express").Router();
