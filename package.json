@@ -5,7 +5,7 @@
   "main": "node_src/server.js",
   "scripts": {
     "test": "nodemon node_src/server.js",
-    "start": "node server.js",
+    "start": "node index.js",
     "dev": "nodemon ."
   },
   "repository": {
