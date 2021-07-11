@@ -1,4 +1,4 @@
-const donorController = require("../../../controllers/mobile/donorController");
+const donorController = require("../../controllers/mobile/donorController");
 const express = require("express");
 const router = express.Router();
 

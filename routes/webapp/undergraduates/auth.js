@@ -1,6 +1,6 @@
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
-const Undergraduate = require("../../../models/mongoose/undergraduate");
+const Undergraduate = require("../../models/mongoose/undergraduate");
 const JWTstrategy = require("passport-jwt").Strategy;
 const ExtractJWT = require("passport-jwt").ExtractJwt;
 

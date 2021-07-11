@@ -2,10 +2,10 @@ const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-const DonorController = require("../../../controllers/mobile/DonorController");
-const verifyToken = require("../../../middlewares/verifyToken");
-const redisClient = require("../../../index");
-// const RedisDB = require("../../../database/redis");
+const DonorController = require("../../controllers/mobile/DonorController");
+const verifyToken = require("../../middlewares/verifyToken");
+const redisClient = require("../../index");
+// const RedisDB = require("../../database/redis");
 // const redisClient = RedisDB.client;
 require("dotenv").config();
 

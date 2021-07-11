@@ -2,7 +2,7 @@ const express = require("express");
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
-const UndergraduateController = require("../../../controllers/webapp/UndergraduateController");
+const UndergraduateController = require("../../controllers/webapp/UndergraduateController");
 
 router.post("/signup", UndergraduateController.createStudentProfile);
 
