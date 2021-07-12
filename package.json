@@ -2,13 +2,9 @@
   "name": "fundme-backend-pjt-96",
   "version": "1.0.0",
   "description": "",
-  "main": "node_src/index.js",
+  "main": "noindex.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "nodemon node_src/server.js",
-=======
-    "test": "nodemon node_src/index.js",
->>>>>>> 7de4e8188860784ce4db77990e069bec7f5cc377
+    "test": "nodemon index.js",
     "start": "node index.js",
     "dev": "nodemon ."
   },
