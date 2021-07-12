@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const mongoose = require("mongoose"),
   { Schema } = mongoose,
   beneficiariesSchema = new Schema(
@@ -56,15 +57,37 @@ const mongoose = require("mongoose"),
       },
       cacDocument: {
         type: Buffer,
-        required: true
+       // required: true
       },
       govVerification: {
         type: Buffer,
-        required: true
+        //required: true
       }
     },
     {
       timestamps: true,
     }
   );
-module.exports = mongoose.model("Beneficiary", beneficiariesSchema);
+
+beneficiariesSchema.pre("save", function (next) {
+  let user = this;
+  bcrypt
+    .hash(user.password, 10)
+    .then((hash) => {
+      user.password = hash;
+      next();
+    })
+    .catch((error) => {
+      console.log(`Error in hashing password: ${error.message}`);
+      next(error);
+    });
+});
+
+beneficiariesSchema.methods.passwordComparison = function (inputPassword) {
+  let user = this;
+  return bcrypt.compare(inputPassword, user.password);
+};
+
+const Beneficiary = mongoose.model("Beneficiary", beneficiariesSchema);
+
+module.exports = Beneficiary
